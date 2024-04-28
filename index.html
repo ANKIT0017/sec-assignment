@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cartoon Character Page</title>
+  <title>Death Note Character Page</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      background-color: #2c3e50; /* Dark blue background */
     }
 
     .container {
@@ -18,61 +18,47 @@
       padding: 20px;
       background-color: #fff;
       border-radius: 20px;
-      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
 
     h1 {
-      color: #333;
+      color: #e74c3c; /* Red title */
       font-size: 36px;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
     }
 
-    #cartoon-img {
+    #ryuk-img {
       max-width: 100%;
       height: auto;
       border-radius: 20px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease;
     }
 
-    #cartoon-img:hover {
-      transform: scale(1.05);
+    #ryuk-img:hover {
+      transform: rotate(10deg) scale(1.05);
     }
 
     .speech-bubble {
       position: absolute;
-      bottom: 100%;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      background-color: #f9d14b;
+      transform: translate(-50%, -50%);
+      background-color: #f9d14b; /* Yellow speech bubble */
       padding: 15px 25px;
       border-radius: 20px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
       z-index: 1;
       opacity: 0;
-      transition: opacity 0.3s ease, bottom 0.3s ease;
+      transition: opacity 0.3s ease;
     }
 
-    #cartoon-img:hover + .speech-bubble {
+    #ryuk-img:hover + .speech-bubble {
       opacity: 1;
-      bottom: 110%;
-    }
-
-    .speech-bubble:before {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 10px 10px 0;
-      border-style: solid;
-      border-color: #f9d14b transparent;
-      display: block;
-      width: 0;
     }
 
     .speech-text {
@@ -82,7 +68,7 @@
     }
 
     .cta-button {
-      background-color: #ff6b6b;
+      background-color: #3498db; /* Blue button */
       color: #fff;
       padding: 15px 30px;
       border-radius: 40px;
@@ -90,25 +76,28 @@
       text-decoration: none;
       display: inline-block;
       margin-top: 30px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s ease;
     }
 
     .cta-button:hover {
-      background-color: #ff4f4f;
+      background-color: #2980b9; /* Darker blue on hover */
     }
 
-    @keyframes bounce {
-      0%, 100% {
+    @keyframes float {
+      0% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-8px);
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
       }
     }
 
-    .cta-button {
-      animation: bounce 1s infinite;
+    #ryuk-img {
+      animation: float 4s ease-in-out infinite;
     }
 
     @media screen and (max-width: 600px) {
@@ -128,10 +117,10 @@
 <body>
 
 <div class="container">
-  <h1>Welcome to Cartoon Character Page</h1>
-  <img id="cartoon-img" src="images.jpg" alt="Cartoon Character"> <!-- Replace 'your-image.jpg' with your image file path -->
+  <h1>Welcome to Death Note Character Page</h1>
+  <img id="ryuk-img" src="images.jpg" alt="Ryuk from Death Note"> <!-- Replace with Ryuk image -->
   <div class="speech-bubble">
-    <p class="speech-text">Hello! I'm your friendly cartoon character. Click below to learn more about me.</p>
+    <p class="speech-text">I am Ryuk, the Shinigami. Are you ready to use the Death Note?</p>
   </div>
   <a href="#" class="cta-button">Learn More</a>
 </div>
