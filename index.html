@@ -6,7 +6,7 @@
   <title>Cartoon Character Page</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f8f8f8;
@@ -17,46 +17,55 @@
       margin: 50px auto;
       padding: 20px;
       background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
       text-align: center;
       position: relative;
+      overflow: hidden;
     }
 
     h1 {
       color: #333;
       font-size: 36px;
       margin-bottom: 20px;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
     }
 
     #cartoon-img {
       max-width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
       transition: transform 0.3s ease;
     }
 
     #cartoon-img:hover {
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .speech-bubble {
       position: absolute;
-      bottom: 120px;
+      bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
       background-color: #f9d14b;
-      padding: 10px 20px;
+      padding: 15px 25px;
       border-radius: 20px;
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
       z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease, bottom 0.3s ease;
+    }
+
+    #cartoon-img:hover + .speech-bubble {
+      opacity: 1;
+      bottom: 110%;
     }
 
     .speech-bubble:before {
       content: '';
       position: absolute;
-      bottom: -20px;
+      bottom: -15px;
       left: 50%;
       transform: translateX(-50%);
       border-width: 10px 10px 0;
@@ -67,8 +76,26 @@
     }
 
     .speech-text {
-      font-size: 20px;
+      font-size: 18px;
       color: #333;
+      line-height: 1.4;
+    }
+
+    .cta-button {
+      background-color: #ff6b6b;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 40px;
+      font-size: 24px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ff4f4f;
     }
 
     @keyframes bounce {
@@ -76,36 +103,37 @@
         transform: translateY(0);
       }
       50% {
-        transform: translateY(-20px);
+        transform: translateY(-8px);
       }
     }
 
     .cta-button {
-      background-color: #ff6b6b;
-      color: #fff;
-      padding: 15px 30px;
-      border-radius: 30px;
-      font-size: 24px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 30px;
-      animation: bounce 2s infinite;
+      animation: bounce 1s infinite;
     }
 
-    .cta-button:hover {
-      background-color: #ff4f4f;
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 28px;
+      }
+      .speech-bubble {
+        font-size: 16px;
+      }
+      .cta-button {
+        padding: 12px 24px;
+        font-size: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>WELCOME</h1>
-  <img id="cartoon-img" src="images.jpg" alt="Cartoon Character">
+  <h1>Welcome to Cartoon Character Page</h1>
+  <img id="cartoon-img" src="download.jpg" alt="Cartoon Character">
   <div class="speech-bubble">
-    <p class="speech-text">Hello! I'm yagami light.</p>
+    <p class="speech-text">Hello! I'm your friendly cartoon character. Click below to learn more about me.</p>
   </div>
-  <a href="download.jpg" class="cta-button">Learn More</a>
+  <a href="images.jpg" class="cta-button">Learn More</a>
 </div>
 
 </body>
