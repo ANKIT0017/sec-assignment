@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartoon Character Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #cartoon-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    #cartoon-img:hover {
+      transform: scale(1.1);
+    }
+
+    .speech-bubble {
+      position: absolute;
+      bottom: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #f9d14b;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .speech-bubble:before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 10px 10px 0;
+      border-style: solid;
+      border-color: #f9d14b transparent;
+      display: block;
+      width: 0;
+    }
+
+    .speech-text {
+      font-size: 20px;
+      color: #333;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .cta-button {
+      background-color: #ff6b6b;
+      color: #fff;
+      padding: 15px 30px;
+      border-radius: 30px;
+      font-size: 24px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+      animation: bounce 2s infinite;
+    }
+
+    .cta-button:hover {
+      background-color: #ff4f4f;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>WELCOME</h1>
+  <img id="" src="https://via.placeholder.com/400" alt="Cartoon Character">
+  <div class="speech-bubble">
+    <p class="speech-text">Hello! I'm yagami light.</p>
+  </div>
+  <a href="#" class="cta-button">Learn More</a>
+</div>
+
+</body>
+</html>
